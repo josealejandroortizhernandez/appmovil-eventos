@@ -1,0 +1,46 @@
+body {
+ margin: 0
+}
+
+body, input, a {
+ font-family: sans-serif
+}
+
+header {
+ text-align: center
+}
+
+main {
+ max-width: 600px;
+ margin: 0 auto;
+ background-color: #07b0ff48;
+}
+
+p {
+ margin: 1em
+}
+
+label {
+ display: block;
+ font-size: small;
+ font-weight: bold
+}
+
+label>
+* {
+ display: block;
+ width: 100%
+}
+
+#pie {
+	clear: both;
+	text-align: center;
+	padding: 15px;
+	width:97.7%;
+	height:25px;
+	color: whitesmoke;
+	position: absolute;
+	margin-bottom:60px;
+	background:-webkit-linear-gradient(4deg ,#111 1%, #000000 90%, #030100 1%, #000000 90% );
+    background:-moz-linear-gradient(4deg ,#111 1%, #000000 90%, #030100 1%, #000000 90% );
+}

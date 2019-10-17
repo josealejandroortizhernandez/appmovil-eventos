@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/calculator.css" >
+    <script src="js/calculator.js"></script>    
+    <title>Calculadora UTN</title>
+    <link rel="icon" sizes="32x32" href="favicon.ico">
+    <meta name="theme-color" content="#66CC99">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileImage" content="img/firebase.png">
+    <meta name="msapplication-TileColor" content="#2a2c2c">
+    <meta name="mobile-web-app-capable" content="yes">
+   <link rel="apple-touch-icon" sizes="1024x1024" href="img/firebase.png">
+   <link rel="apple-touch-startup-image" sizes="1024x1024"
+     href="img/firebase.png">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-status-bar-style" content="black">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="css/estilos.css">
+   <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+   <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+   <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+   <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+   <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+   <script defer src="/__/firebase/init.js"></script>
+
+  </head>
+  <body>
+      <form name="vista">
+          <header>
+            <center>
+            <h1>Calculadora UTN </h1>
+            </center>
+          </header>
+          
+          </form>
+          <script>
+              /* Registra un service worker para instalar la aplicación en el
+               * caché del navegador. */
+              async function registraServiceWorker() {
+                if ("serviceWorker" in navigator) {
+                  try {
+                    const registro = await navigator.serviceWorker.register("sw.js");
+                    console.log("Service Worker registrado.");
+                    console.log(registro);
+                  } catch (e) {
+                    muestraError(e);
+                  }
+                }
+              }
+         
+              registraServiceWorker();
+              document.addEventListener('DOMContentLoaded', function () {
+                try {
+                  let app = firebase.app();
+                  let features = ['auth', 'database', 'messaging', 'storage']
+                    .filter(feature => typeof app[feature] === 'function');
+                  document.vista.mensaje.value =
+                    `Firebase SDK cargó con: ${features.join(', ')}`;
+                } catch (e) {
+                  console.log(e);
+                  document.vista.mensaje.value =
+                    'Error cargando Firebase SDK. Revisa la consola del navegador.';
+                }
+              });
+            </script>
+    <center>
+    
+    <table>
+      <tr>
+        <th colspan="4"><button id="result">0</button></th><br>
+      <p></p>
+
+      
+      <tr>
+        <td><button onclick="add('1')">1</button></td>
+        <td><button onclick="add('2')">2</button></td>
+        <td><button onclick="add('3')">3</button></td>
+        <td><button onclick="add('+')">+</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="add('4')">4</button></td>
+        <td><button onclick="add('5')">5</button></td>
+        <td><button onclick="add('6')">6</button></td>
+        <td><button onclick="add('-')">-</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="add('7')">7</button></td>
+        <td><button onclick="add('8')">8</button></td>
+        <td><button onclick="add('9')">9</button></td>
+        <td><button onclick="add('*')">*</button></td>
+      </tr>
+      <tr>
+        <td colspan="3"><button onclick="add('0')">0</button></td>
+        <td colspan="3"><button onclick="add('/')">/</button></td>          
+      </tr>
+      <tr>
+        <td colspan="2"><button onclick="del()" class="ac">AC</button></td>
+        <td><button onclick="add('.')">.</button></td>
+        <td><button onclick="calc()">=</button></td>            
+      </tr>
+    </table>
+  
+  </center>
+  </body>
+  <br><br><br>
+  <center>
+      <footer class="sticky-footer bg-white" id="pie">
+					<div class="container my-auto">
+					<div class="copyright text-center my-auto">
+				<small> Derechos Reservados &copy; 2019 Ortiz Hernandez Jose Alejandro IC-51</small>
+			</footer>
+  </center>
+</html>

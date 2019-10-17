@@ -1,0 +1,247 @@
+*{
+	margin: -1px;
+	padding: 0px;
+}
+
+h1 {
+	font: bold 60px verdana, sans-serif;
+}
+h2 {
+	font: bold 14px verdana, sans-serif;
+}
+
+h3{
+	font:  bold 20px verdana, sans-serif;
+	color: #FFF;
+}
+
+#td {
+	font: bold 14px verdana, sans-serif;
+	text-align: center;
+}
+
+header, section, footer, aside, nav{
+	display: block;
+} 
+
+@font-face {   
+	font-family: 'empresa';   
+	src: url('Amatic-Boldya.ttf');
+}  
+
+body {
+	background-image:#cfcbcb;
+	text-align:center;
+	background-repeat: no-repeat center;
+	background-size: 100%;
+	text-align: center;
+	opacity: .95;
+
+	/*background: #FFFFFF; Intentalo
+	text-align: center;
+	box-shadow:#669900, 5px 5px 10px;*/
+} 
+ 
+#agrupar {
+	display: block;
+	
+	margin: 0px auto;
+	text-align: left; 
+ 
+}
+
+#cabecera {
+	height:500px;
+	width:98%;
+	background:-webkit-linear-gradient(50deg ,#BFBBBA 3% ,#BFBBBA 1%, #000000 90%, #BFBBBA 1%, #000000 90%);
+	background:-moz-linear-gradient(45deg ,#BFBBBA 3% ,#BFBBBA 1%, #000000 90%, #BFBBBA 1%, #000000 90%);
+	padding: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+  position: fixed;	
+	color:#349f97;
+ background: #000000;  
+ text-align:  center;
+ border: 0px solid #D3D3D3;
+ padding: 0px;
+ border-radius:30px 30px 30px 30px;
+ text-shadow: #000 6px 4px 6px;
+ background:-webkit-linear-gradient(top, #696969, #DCDCDC);
+box-shadow:#2F4F4F 4px 4px 10px;
+} 
+#logo{
+	display:block;
+	margin-left: 30px;
+	margin-top:-620px; 
+	height: 230px;
+	float: center;
+	margin-left:555px;
+	background-position:center;
+background-attachment:contain;
+background-size:cover;
+}
+#regresar{
+	display:block;
+	margin-left: -620px;
+	margin-top:30px; 
+	
+	float: center;
+	margin-left:555px;
+	background-position:center;
+background-attachment:contain;
+background-size:cover;
+}
+#titulo {
+	font: bold 50px empresa, verdana;
+	width: 30=0px;
+	margin: 0 auto;
+		
+}
+#menu {
+	background: #FFFFFF;
+	border-radius:30px;
+	border: 3px solid #000000;
+	padding: 3px 20px;
+	text-shadow: #708090 3px 3px 5px;
+	background:linear-gradient(top ,  #DCDCDC, #FFFAFA);
+	text-shadow:#708090 2px 5px 5px;
+}
+
+.boton_personalizado{
+    text-decoration: none;
+    padding: 6px;
+    font-weight: 800;
+    font-size: 30px;
+    color: #ffffff;
+    background-color: #7db0c4f5;
+    border-radius: 6px;
+    border: 2px solid #1e1e1e99
+  }
+.boton_personalizado1{
+    text-decoration: none;
+    padding: 6px;
+    font-weight: 600;
+    font-size: 19px;
+    color: #ffffff;
+    background-color: #9e1212cc;
+    border-radius: 6px;
+    border: 2px solid #1e1e1e99
+  }
+
+
+.caja{
+    text-decoration: none;
+    padding: 1px;
+    font-weight: 800;
+    font-size: 25px;
+    color: #ffffff;
+    background-color: #7794a2cc;
+    border-radius: 6px;
+    border: 2px solid #1e1e1e99
+  }
+
+
+.caja1{
+    text-decoration: none;
+    padding: 0px;
+    font-weight: 800;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #15f0dc1c;
+    border-radius: 6px;
+    border: 0px solid #eeecec00;
+  }
+
+
+.boton_personalizado1:hover{
+	background: #000;
+	padding: 6px 12px;
+}
+.boton_personalizado:hover{
+	background: #000;
+	padding: 6px 12px;
+}
+#menu li {
+	display: inline-block;
+	list-style: none;
+	padding: 8px;
+	font: bold 15px verdana, sans-serif;
+}
+#seccion {
+	font: bold 17px verdana, sans-serif;
+	padding: 35px  35px;
+	float: left;
+	text-align: center;
+	width: 1000px;
+	margin: 40px 50px 75px 100px;
+	border: 5px solid #000000;
+	background:center #FFFFFF;
+	border-radius: 20px 20px 20px 20px;
+	/*background:-webkit-linear-gradient(top, #A2ED00, #00D6CC);*/
+	text-shadow: #C0C0C0 2px 5px 6px;
+}
+#columna {
+	float: left;
+
+	width: 5px center;
+	margin: 20px 1px;
+	padding: 1px;
+    background: #98FB98
+}
+
+#tabla1 {
+	float:center ;
+	width: 950px; 
+	border: 1px solid #778899;  
+	margin: 5px 0px 5px;
+	padding: 10px;
+	background:#dcdcdc;
+		border-radius: 22px;
+
+}
+
+
+#pie {
+	clear: both;
+	text-align: center;
+	padding: 15px;
+	width:97.7%;
+	height:25px;
+	color: whitesmoke;
+	position: absolute;
+	margin-bottom:60px;
+	background:-webkit-linear-gradient(4deg ,#111 1%, #000000 90%, #030100 1%, #000000 90% );
+	background:-moz-linear-gradient(4deg ,#111 1%, #000000 90%, #030100 1%, #000000 90% );
+
+	/*
+	float: center;
+ clear: both; 
+ text-align: center;
+ padding: 5px;
+ border-radius:10px;
+  background:000000;*
+ */
+}
+
+#mapa{
+	width: 700px;
+	height: 500px;
+	frameborder:0px; 
+	border:0px;
+	style: 'allowfullscreen';
+}
+
+address{
+	text-align:center;
+	font: 10px;	
+}
+#frmContacto{
+	width: 650px;
+	margin: 0px auto;
+	font: 12px verdana;	
+}
+#frmdatos{
+	margin: 1px auto;
+	height: 25px;
+}
+
