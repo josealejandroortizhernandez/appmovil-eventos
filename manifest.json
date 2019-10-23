@@ -1,0 +1,15 @@
+{
+ "short_name": "Calculadora UTN",
+ "name": "Calculadora UTN  (Alex) ",
+ "start_url": "/index.html",
+ "display": "standalone",
+ "background_color": "#202020",
+ "theme_color": "#c5c4c0",
+ "icons": [
+   {
+     "src": "img/firebase.png",
+     "sizes": "2048x2143",
+     "type": "image/png"
+   }
+ ]
+}
