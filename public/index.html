@@ -6,14 +6,41 @@
     <link rel="stylesheet" href="css/calculator.css" >
     <script src="js/calculator.js"></script>    
     <title>Calculadora UTN</title>
+    <script>
+    /* Registra un service worker para instalar la aplicación en el
+    * caché del navegador. */
+   async function registraServiceWorker() {
+     if ("serviceWorker" in navigator) {
+       try {
+         const registro = await navigator.serviceWorker.register("sw.js");
+         console.log("Service Worker registrado.");
+         console.log(registro);
+       } catch (e) {
+         muestraError(e);
+       }
+     }
+   }
+   registraServiceWorker();
+   document.addEventListener('DOMContentLoaded', function () {
+     try {
+       let app = firebase.app();
+       let features = ['auth', 'database', 'messaging', 'storage']
+         .filter(feature => typeof app[feature] === 'function');
+       document.vista.mensaje.value =
+         `Firebase SDK cargó con: ${features.join(', ')}`;
+     } catch (e) {
+       console.log(e);
+     }
+   });
+ </script>
     <link rel="icon" sizes="32x32" href="favicon.ico">
     <meta name="theme-color" content="#66CC99">
     <link rel="manifest" href="manifest.json">
     <meta name="msapplication-TileImage" content="img/firebase.png">
     <meta name="msapplication-TileColor" content="#2a2c2c">
     <meta name="mobile-web-app-capable" content="yes">
-   <link rel="apple-touch-icon" sizes="1024x1024" href="img/firebase.png">
-   <link rel="apple-touch-startup-image" sizes="1024x1024"
+   <link rel="apple-touch-icon" sizes="2048x2048" href="img/firebase.png">
+   <link rel="apple-touch-startup-image" sizes="2048x2048"
      href="img/firebase.png">
    <meta name="apple-mobile-web-app-capable" content="yes">
    <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -25,6 +52,7 @@
    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
    <script defer src="/__/firebase/init.js"></script>
+   <script type="module" src="mi-footer.js"></script>
 
   </head>
   <body>
@@ -36,38 +64,7 @@
           </header>
           
           </form>
-          <script>
-              /* Registra un service worker para instalar la aplicación en el
-               * caché del navegador. */
-              async function registraServiceWorker() {
-                if ("serviceWorker" in navigator) {
-                  try {
-                    const registro = await navigator.serviceWorker.register("sw.js");
-                    console.log("Service Worker registrado.");
-                    console.log(registro);
-                  } catch (e) {
-                    muestraError(e);
-                  }
-                }
-              }
-         
-              registraServiceWorker();
-              document.addEventListener('DOMContentLoaded', function () {
-                try {
-                  let app = firebase.app();
-                  let features = ['auth', 'database', 'messaging', 'storage']
-                    .filter(feature => typeof app[feature] === 'function');
-                  document.vista.mensaje.value =
-                    `Firebase SDK cargó con: ${features.join(', ')}`;
-                } catch (e) {
-                  console.log(e);
-                  document.vista.mensaje.value =
-                    'Error cargando Firebase SDK. Revisa la consola del navegador.';
-                }
-              });
-            </script>
     <center>
-    
     <table>
       <tr>
         <th colspan="4"><button id="result">0</button></th><br>
@@ -102,15 +99,13 @@
         <td><button onclick="calc()">=</button></td>            
       </tr>
     </table>
-  
   </center>
   </body>
   <br><br><br>
   <center>
-      <footer class="sticky-footer bg-white" id="pie">
-					<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-				<small> Derechos Reservados &copy; 2019 Ortiz Hernandez Jose Alejandro IC-51</small>
-			</footer>
+    <footer is="mi-footer" class="sticky-footer bg-white" id="pie">
+      <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+  </footer>
   </center>
 </html>
